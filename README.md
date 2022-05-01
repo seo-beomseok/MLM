@@ -1,4 +1,4 @@
-# Mixture of Linear Models(MLM) Co-supervised by Deep Neural Network
+# Mixture of Linear Models(MLM) <p> Co-supervised by Deep Neural Network
 <h4 class="author">Beomseok Seo</h4>
 <h4 class="date">2022-05-01</h4>
 
