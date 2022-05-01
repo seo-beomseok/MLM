@@ -18,15 +18,18 @@ MLM explains DNN by approximating it with a piecewise linear model.
 <img src="files/img/steps_3.gif" width="600" />
 
 <div id="step1" class="section level2">
-<h2>1. Express DNN as a piecewise linear function</h2>
+<h2>Step1. Express DNN as a piecewise linear function</h2>
+          <p> Because of its activation functions, DNN can be easily approximated by a piecewise linear function. If ReLU is used, DNN is acutally a piecewise linear.  To express a DNN with a piecewise linear function, we first express a hidden layer of DNN as a piecewise linear function. A hidden layer can be easily expressed as a piecewise linear function by clustering its output. </p>
           <img src="files/img/relu1.png" height="230" /><br>
+                    
+          <p>Then, it is easy to find the piecewise linear expression of DNN by applying Cartesian product to the layer-level clusters.</p>
           <img src="files/img/layer_l-cell.png" height="230" /><br>
           <img src="files/img/cells.png" height="350" /><br>
           <img src="files/img/localsamples.gif" width="600" /><br>
 </div>          
 <div id="step2" class="section level2">
 <h2>2. Merge cells into EPIC</h2>
-          <img src="files/img/pairwise_prediction.png" width="500" /><br>
+          <img src="files/img/pairwise_prediction.png" width="600" /><br>
           <img src="files/img/epic.png" height="270" /><br>
                     
 </div>                    
