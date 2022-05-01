@@ -10,5 +10,5 @@ MLM explains DNN by approximating it with a piecewise linear model.
 <h1 class="title toc-ignore">Overview</h1>
 <p>One natural idea to explain a complex function is to view the function as a composite of multiple simple functions in different regions of input space.</p>
 
-![An example](files/img/example.png)
+![An example](files/img/example.png =250x)
           
