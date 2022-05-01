@@ -26,7 +26,7 @@ MLM explains DNN by approximating it with a piecewise linear model.
 </div>          
 <div id="step2" class="section level2">
 <h2>2. Merge cells into EPIC</h2>
-          <img src="files/img/pairwise_prediction.png" height="270" /><br>
+          <img src="files/img/pairwise_prediction.png" width="500" /><br>
           <img src="files/img/epic.png" height="270" /><br>
                     
 </div>                    
