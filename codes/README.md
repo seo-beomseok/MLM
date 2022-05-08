@@ -15,41 +15,63 @@ from utils import plot_mosaic, plot_ci, explainable_tree, explainable_condition,
 </code></pre>
 
 <h1 class="title toc-ignore">Usage</h1>
+<div>
+<h2>1. Fit MLM-Cell</h2>
 <pre><code>
 MLM = MixtureLinearModel(dnn_model, verbose=True)
 MLM.statsmodel = False
 MLM.compute_CELL(X_train,K=100,random_seed=1)
+'''
 100%|██████████| 3/3 [03:02<00:00, 60.80s/it]
 # of CELL:1712 / min size:1 / avg size:8.1 / max size:149 / # of singlton CELL:538
 # fit MLM-cell
-
+'''
+            
 MLM.fit_LocalModels(X_train, y_train, 
                     eps=0.01, num_noise_samp=100, 
                     classification=False, alpha=0, max_iter=10000,random_seed=1)
+'''            
 100%|██████████| 1712/1712 [00:50<00:00, 33.90it/s]
 100%|██████████| 1712/1712 [00:00<00:00, 1726.29it/s]
+'''
+            
 pred_lmm_train = MLM.predict(X_train, covariance_type='full', covariance_tied=True, uniform_prior=False,)
 pred_lmm_test = MLM.predict(X_test, covariance_type='full', covariance_tied=True, uniform_prior=False,)
+'''
 100%|██████████| 1712/1712 [00:00<00:00, 15844.54it/s]
 100%|██████████| 1712/1712 [00:05<00:00, 302.96it/s]
 100%|██████████| 1712/1712 [00:00<00:00, 17756.26it/s]
 100%|██████████| 1712/1712 [00:01<00:00, 1166.78it/s]
+'''
+            
 print('MLM-CELL: Train RMSE:{:3.3f} / Test RMSE:{:3.3f}'.format(
             rmse(y_train,np.array(pred_lmm_train)),
             rmse(y_test,np.array(pred_lmm_test))))
 MLM-CELL: Train RMSE:52.741 / Test RMSE:60.850
-# fit MLM-EPIC
+</code></pre>
+</div>
+<div>
+<h2>2. Fit MLM-EPIC</h2>
+<pre><code>
 MLM.fit_MergedLocalModels(150, classification=False, alpha=0, max_iter=10000, random_seed=1)
+'''
 100%|██████████| 1712/1712 [04:20<00:00,  6.57it/s]
 ./src\mixturelinearmodel.py:392: ClusterWarning: scipy.cluster: The symmetric non-negative hollow observation matrix looks suspiciously like an uncondensed distance matrix
+'''
+
 LocalModelsTree = linkage(self.dist_mat_avg, 'ward')
+'''
 100%|██████████| 150/150 [00:00<00:00, 531.92it/s]
+'''
+            
 pred_epic_train = MLM.predict(X_train,  merged=True, covariance_type='full', covariance_tied=True, uniform_prior=False)
 pred_epic_test = MLM.predict(X_test, merged=True, covariance_type='full', covariance_tied=True, uniform_prior=False)
+'''
 100%|██████████| 1712/1712 [00:00<00:00, 15400.23it/s]
 100%|██████████| 150/150 [00:05<00:00, 28.49it/s]
 100%|██████████| 1712/1712 [00:00<00:00, 11435.41it/s]
 100%|██████████| 150/150 [00:01<00:00, 91.79it/s]
+'''
 print('MLM-EPIC: Train RMSE:{:3.3f} / Test RMSE:{:3.3f}'.format(
             rmse(y_train,np.array(pred_epic_train)),
             rmse(y_test,np.array(pred_epic_test))))
@@ -58,7 +80,7 @@ MLM.save_dict('./output/mlm_bikesharing')
 </code></pre>
 
 <h1 class="title toc-ignore">Interpretation</h1>
-</div>          
+ 
 <div id="step2" class="section level2">
 <h2>1. Regression coefficients</h2>
 <pre><code>            
@@ -78,7 +100,8 @@ for i in range(MLM.p+1):
     ax = plt.subplot(9,2,i+1)
     plot_ci(MLM,i,epic_id=range(5),ax=ax,title=True)
 </code></pre>
-
+</div>
+<div>            
 <h2>2. Low Dimensional Subspace</h2>
 <pre><code>   
 explainable_tree(MLM, X_train, psi=0.8, epic_id=range(5))
@@ -133,8 +156,10 @@ exp_cond
          ['59', 'workingday != 1'],
          ['59', 'season_2 == 1']], dtype='<U21')]]
 </code></pre>
-
+</div>
+<div>
 <h2>3. Prominent Region</h2>         
 <pre><code> 
 explainable_dim(MLM,X_train,epic_id=range(5),max_dim=p) 
 </code></pre>
+</div>
