@@ -65,14 +65,14 @@ Arxiv preprint can be obtained <a href="https://arxiv.org/abs/2108.04035">here.<
           <img src="files/img/softweights.png" width="320" />
           </p>
           <p align="center">
-          <img src="files/img/mlm.png" width="220" />
+          <img src="files/img/mlm.png" width="450" />
           </p>
 <h1 class="title toc-ignore">Interpretation of MLM with BikeSharing Data</h1>
           <p> MLM can be interpreted by how samples are divided into EPIC and how the local linear model predict the target value.</p>
           <p align="center">
-          <img src="files/img/bikesharing_linearcoef.png" width="320" />
+          <img src="files/img/bikesharing_linearcoef.png" width="530" />
           </p>
           <p align="center">
-          <img src="files/img/bikesharing_explainablecond.png" width="320" />
+          <img src="files/img/bikesharing_explainablecond.png" width="530" />
           </p>
           
