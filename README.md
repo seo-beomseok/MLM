@@ -43,11 +43,11 @@ MLM explains DNN by approximating it with a piecewise linear model.
 </div>          
 <div id="step2" class="section level2">
 <h2>2. Merge cells into EPIC</h2>
-          <p> To reduce the number of local clusters, we merge them into the smaller number of clusters. We define <em>mutual prediction disparity</em>, $d_{s,t}$, between the pair of local linear models $m_s(\mathbf{x})$ and $m_t(\mathbf{x})$, $s, t \in \{1,...,\widetilde{K}\}$ by
-                    $$
+          <p> To reduce the number of local clusters, we merge them into the smaller number of clusters. We define <em>mutual prediction disparity</em>, $d_{s,t}$, between the pair of local linear models <img src="https://render.githubusercontent.com/render/math?math=m_s(\mathbf{x})"> and <img src="https://render.githubusercontent.com/render/math?math=m_t(\mathbf{x})">, <img src="https://render.githubusercontent.com/render/math?math=s, t \in \{1,...,\widetilde{K}\}"> by
+                    <img src="https://render.githubusercontent.com/render/math?math=
                     d_{s,t} = \frac{1}{n_s+n_t+2m} \left[\sum\limits_{i=1}^{n_s+m} \Big(m_s(\mathbf{v}^\prime_{s,i}) - m_t(\mathbf{v}^\prime_{s,i})\Big)^2
-                    +\sum\limits_{i=1}^{n_t+m} \Big(m_s(\mathbf{v}^\prime_{t,i}) - m_t(\mathbf{v}^\prime_{t,i})\Big)^2\right ]  \, .
-                    $$
+                    +\sum\limits_{i=1}^{n_t+m} \Big(m_s(\mathbf{v}^\prime_{t,i}) - m_t(\mathbf{v}^\prime_{t,i})\Big)^2\right ]  \, ."
+                    >
                     We can take $d_{s,t}$ as a distance measure between the two local linear models. It is the average squared difference between the predicted values by the two models.</p><br>
           <p align="center">
           <img src="files/img/pairwise_prediction.png" width="560" /><br>
