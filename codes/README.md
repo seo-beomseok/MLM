@@ -72,6 +72,7 @@ pred_epic_test = MLM.predict(X_test, merged=True, covariance_type='full', covari
 100%|██████████| 1712/1712 [00:00<00:00, 11435.41it/s]
 100%|██████████| 150/150 [00:01<00:00, 91.79it/s]
 '''
+            
 print('MLM-EPIC: Train RMSE:{:3.3f} / Test RMSE:{:3.3f}'.format(
             rmse(y_train,np.array(pred_epic_train)),
             rmse(y_test,np.array(pred_epic_test))))
@@ -88,9 +89,11 @@ import utils
 from utils import plot_mosaic, plot_ci, explainable_tree, explainable_condition, explainable_dim, highest_explainable_dim, plot_id_1d, plot_id_2d, plot_id_3d
 
 pred_epic_train = MLM.predict(X_train,  merged=True, covariance_type='full', covariance_tied=True, uniform_prior=False)
+'''
 100%|██████████| 1712/1712 [00:00<00:00, 19150.75it/s]
 100%|██████████| 150/150 [00:03<00:00, 47.86it/s]
-
+'''
+            
 MLM.feature_names = feature_names
 plot_mosaic(MLM, epic_id=range(5), log_trans=False)
 
@@ -98,20 +101,24 @@ f, axs = plt.subplots(9,2,figsize=(10,15),dpi=300)
 f.tight_layout()
 for i in range(MLM.p+1):
     ax = plt.subplot(9,2,i+1)
-    plot_ci(MLM,i,epic_id=range(5),ax=ax,title=True)
+    plot_ci(MLM,i,epic_id=range(5),ax=ax,title=True)            
 </code></pre>
 </div>
 <div>            
 <h2>2. Low Dimensional Subspace</h2>
 <pre><code>   
 explainable_tree(MLM, X_train, psi=0.8, epic_id=range(5))
+'''            
 EPIC 0(orig id 86): found tree with max pure size 727 and total pure size 883 for 883
 EPIC 1(orig id 85): found tree with max pure size 377 and total pure size 488 for 488
 EPIC 2(orig id 28): found tree with max pure size 166 and total pure size 456 for 456
 EPIC 3(orig id 103): found tree with max pure size 182 and total pure size 370 for 370
 EPIC 4(orig id 87): found tree with max pure size 66 and total pure size 307 for 307
+'''
+            
 exp_cond = explainable_condition(MLM, X, xi=50, epic_id=range(5))
 exp_cond
+'''
 [[array([['727', 'mnth > 3.5'],
          ['727', 'hr > 11.5'],
          ['727', 'hr <= 14.5'],
@@ -155,11 +162,12 @@ exp_cond
          ['59', 'weekday <= 0.5'],
          ['59', 'workingday != 1'],
          ['59', 'season_2 == 1']], dtype='<U21')]]
+'''
 </code></pre>
 </div>
 <div>
 <h2>3. Prominent Region</h2>         
-<pre><code> 
+<pre><code>
 explainable_dim(MLM,X_train,epic_id=range(5),max_dim=p) 
 </code></pre>
 </div>
