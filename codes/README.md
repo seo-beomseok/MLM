@@ -26,7 +26,7 @@ MLM.compute_CELL(X_train,K=100,random_seed=1)
 # of CELL:1712 / min size:1 / avg size:8.1 / max size:149 / # of singlton CELL:538
 # fit MLM-cell
 '''
-            
+                        
 MLM.fit_LocalModels(X_train, y_train, 
                     eps=0.01, num_noise_samp=100, 
                     classification=False, alpha=0, max_iter=10000,random_seed=1)
@@ -58,7 +58,7 @@ MLM.fit_MergedLocalModels(150, classification=False, alpha=0, max_iter=10000, ra
 100%|██████████| 1712/1712 [04:20<00:00,  6.57it/s]
 ./src\mixturelinearmodel.py:392: ClusterWarning: scipy.cluster: The symmetric non-negative hollow observation matrix looks suspiciously like an uncondensed distance matrix
 '''
-
+            
 LocalModelsTree = linkage(self.dist_mat_avg, 'ward')
 '''
 100%|██████████| 150/150 [00:00<00:00, 531.92it/s]
@@ -87,7 +87,7 @@ MLM.save_dict('./output/mlm_bikesharing')
 <pre><code>            
 import utils
 from utils import plot_mosaic, plot_ci, explainable_tree, explainable_condition, explainable_dim, highest_explainable_dim, plot_id_1d, plot_id_2d, plot_id_3d
-
+            
 pred_epic_train = MLM.predict(X_train,  merged=True, covariance_type='full', covariance_tied=True, uniform_prior=False)
 '''
 100%|██████████| 1712/1712 [00:00<00:00, 19150.75it/s]
@@ -96,7 +96,7 @@ pred_epic_train = MLM.predict(X_train,  merged=True, covariance_type='full', cov
             
 MLM.feature_names = feature_names
 plot_mosaic(MLM, epic_id=range(5), log_trans=False)
-
+            
 f, axs = plt.subplots(9,2,figsize=(10,15),dpi=300)
 f.tight_layout()
 for i in range(MLM.p+1):
