@@ -59,4 +59,7 @@ MLM explains DNN by approximating it with a piecewise linear model.
 </div>                    
 <div id="step3" class="section level2">
 <h2>3. Apply softweights to MLM</h2>
+          <p> When we approximate a complex function with a piecewise linear function, the error usually increases for the samples located between two distinct local linear models. So to reduce the error rate, we use soft weights to mix the local models into the mixture of linear models (MLM). We fit Gaussian mixture models for each EPIC cluster and use the likelihood values of the GMM computed from the training samples as the soft weight to mix local linear models.</p><br>
+          <p align="center">
           <img src="files/img/softweights.png" width="320" />
+          </p>
