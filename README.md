@@ -66,7 +66,7 @@ Arxiv preprint can be obtained <a href="https://arxiv.org/abs/2108.04035">here.<
           </p>
           <p> The final form of soft-weighted MLM is as follows.</p>
           <p align="center">
-          <img src="files/img/mlm.png" width="250" />
+          <img src="files/img/mlm.png" width="270" />
           </p>
 <h1 class="title toc-ignore">Interpretation of MLM with BikeSharing Data</h1>
           <p> MLM can be interpreted by how samples are divided into EPIC and how the local linear model predict the target value.</p>
