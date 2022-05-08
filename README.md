@@ -44,7 +44,7 @@ MLM explains DNN by approximating it with a piecewise linear model.
 <div id="step2" class="section level2">
 <h2>2. Merge cells into EPIC</h2>
           <p> To reduce the number of local clusters, we merge them into the smaller number of clusters. We define <em>mutual prediction disparity</em>, $d_{s,t}$, between the pair of local linear models <img src="https://render.githubusercontent.com/render/math?math=m_s(\mathbf{x})"> and <img src="https://render.githubusercontent.com/render/math?math=m_t(\mathbf{x})">, <img src="https://render.githubusercontent.com/render/math?math=s, t \in \{1,...,\widetilde{K}\}"> by <br>
-                    <img src="https://render.githubusercontent.com/render/math?math=d_{s,t} = ."><br>
+                    <img src="https://render.githubusercontent.com/render/math?math=d_{s,t} = \frac{1}{2}."><br>
                     We can take $d_{s,t}$ as a distance measure between the two local linear models. It is the average squared difference between the predicted values by the two models.</p><br>
           <p align="center">
           <img src="files/img/pairwise_prediction.png" width="560" /><br>
