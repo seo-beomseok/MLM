@@ -43,7 +43,7 @@ Arxiv preprint can be obtained <a href="https://arxiv.org/abs/2108.04035">here.<
           </p>
 </div>          
 <div id="step2" class="section level2">
-<h2>2. Merge cells into EPIC</h2>
+<h2>Step2. Merge cells into EPIC</h2>
           <p> To reduce the number of local clusters, we merge them into the smaller number of clusters. We define <em>mutual prediction disparity</em>, <img src="https://render.githubusercontent.com/render/math?math=d_{s,t}">, between the pair of local linear models <img src="https://render.githubusercontent.com/render/math?math=m_s(\mathbf{x})"> and <img src="https://render.githubusercontent.com/render/math?math=m_t(\mathbf{x})">, <img src="https://render.githubusercontent.com/render/math?math=s, t \in \{1,...,\widetilde{K}\}"> by </p><br>
           <p align="center">
           <img src="files/img/distance.png" width="560" /><br>
@@ -59,7 +59,7 @@ Arxiv preprint can be obtained <a href="https://arxiv.org/abs/2108.04035">here.<
                     
 </div>                    
 <div id="step3" class="section level2">
-<h2>3. Apply softweights to MLM</h2>
+<h2>Step3. Apply softweights to MLM</h2>
           <p> When we approximate a complex function with a piecewise linear function, the error usually increases for the samples located between two distinct local linear models. So to reduce the error rate, we use soft weights to mix the local models into the mixture of linear models (MLM). We fit Gaussian mixture models for each EPIC cluster and use the likelihood values of the GMM computed from the training samples as the soft weight to mix local linear models.</p><br>
           <p align="center">
           <img src="files/img/softweights.png" width="320" />
