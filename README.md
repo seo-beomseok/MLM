@@ -44,12 +44,14 @@ MLM explains DNN by approximating it with a piecewise linear model.
 <div id="step2" class="section level2">
 <h2>2. Merge cells into EPIC</h2>
           <p> To reduce the number of local clusters, we merge them into the smaller number of clusters. We define <em>mutual prediction disparity</em>, <img src="https://render.githubusercontent.com/render/math?math=d_{s,t}">, between the pair of local linear models <img src="https://render.githubusercontent.com/render/math?math=m_s(\mathbf{x})"> and <img src="https://render.githubusercontent.com/render/math?math=m_t(\mathbf{x})">, <img src="https://render.githubusercontent.com/render/math?math=s, t \in \{1,...,\widetilde{K}\}"> by </p><br>
-
+          <p align="center">
+          <img src="files/img/distance.png" width="560" /><br>
+          </p>
           <p> We can take <img src="https://render.githubusercontent.com/render/math?math=d_{s,t}"> as a distance measure between the two local linear models. It is the average squared difference between the predicted values by the two models.</p><br>
           <p align="center">
           <img src="files/img/pairwise_prediction.png" width="560" /><br>
           </p>
-          <p> using hierarchical clustering</p>
+          <p> Treating <img src="https://render.githubusercontent.com/render/math?math=d_{s,t}"> as a distance between the <img src="https://render.githubusercontent.com/render/math?math=s">th and <img src="https://render.githubusercontent.com/render/math?math=t">th cells, <img src="https://render.githubusercontent.com/render/math?math=s, t\in \{1,\cdots,\widetilde{K}\}">, we apply hierarchical clustering, specifically, Ward's linkage, to merge the cells <img src="https://render.githubusercontent.com/render/math?math=\mathcal{C}_1,\cdots,\mathcal{C}_{\widetilde{K}}"> into <img src="https://render.githubusercontent.com/render/math?math=\widetilde{J}"> clusters. We call the merges clusters as <em>EPIC (Explainable Prediction-induced Input Cluster)</em></p><br>
           <p align="center">
           <img src="files/img/epic.png" height="270" /><br>
           </p>
