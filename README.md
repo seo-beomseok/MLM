@@ -8,7 +8,7 @@ Arxiv preprint can be obtained <a href="https://arxiv.org/abs/2108.04035">here.<
 
 - The slides explaining MLM can be found <a href="files/MLM_slides.pdf">here</a>
 
-- The python codes for MLM and an example of using it can be found in codes folder.
+- The python codes for MLM and an example of using it can be found in <a href="codes/">codes</a> folder.
 ---
 
 <h1 class="title toc-ignore">Overview</h1>
