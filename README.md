@@ -2,12 +2,13 @@
 <h4 class="author">Beomseok Seo</h4>
 <h4 class="date">2022-05-01</h4>
 
-MLM explains DNN by approximating it with a piecewise linear model.
-<a href="https://arxiv.org/abs/2108.04035">Arxiv preprint can be obtained here.</a>
+- MLM explains DNN by approximating it with a piecewise linear model.
+Arxiv preprint can be obtained <a href="https://arxiv.org/abs/2108.04035">here.</a>
 (accepted by Journal of Computational and Graphical Statistics on 4/6/2022)
 
----
+- The slides explaining MLM can be found <a href="files/MLM_slides.pdf">here</a>
 
+- The python codes for MLM and an example of using it can be found in codes folder.
 ---
 
 <h1 class="title toc-ignore">Overview</h1>
